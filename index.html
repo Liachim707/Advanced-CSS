@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Image gallery</title>
+
+    <style>
+      /* Общие стили страницы */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+      }
+
+      /* Стили заголовка */
+      h1 {
+        background-color: #3e7130;
+        color: white;
+        font-size: 28px;
+        margin: 0;
+        padding: 6px 8px;
+      }
+
+      /* Стили галереи с помощью Flexbox */
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 6px;
+        padding: 8px;
+      }
+
+      /* Стили изображений */
+      .gallery img {
+        width: calc(50% - 3px);
+        height: 93px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      /* Адаптация для экранов меньше 360px */
+      @media (max-width: 359px) {
+        .gallery img {
+          width: 100%;
+        }
+      }
+
+      /* Контейнер для ссылки и кнопки */
+      .button-container {
+        text-align: center;
+        margin: 14px 0 20px;
+      }
+
+      /* Ссылка, оформленная как кнопка */
+      .new-images {
+        display: inline-block;
+        text-decoration: none;
+      }
+
+      /* Стили кнопки */
+      .new-images button {
+        background-color: #c45b50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.4s ease, color 0.4s ease;
+      }
+
+      /* Изменение цвета при наведении */
+      .new-images button:hover {
+        background-color: #3e7130;
+        color: white;
+      }
+
+      /* Стили подписи автора */
+      .author {
+        background-color: black;
+        color: white;
+        padding: 8px 6px;
+        margin: 0;
+        font-family: Georgia, serif;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Image Gallery</h1>
+
+    <div class="gallery">
+      <img src="https://picsum.photos/240/220?random=1" alt="Image 1" />
+
+      <img src="https://picsum.photos/240/220?random=2" alt="Image 2" />
+
+      <img src="https://picsum.photos/240/220?random=3" alt="Image 3" />
+
+      <img src="https://picsum.photos/240/220?random=4" alt="Image 4" />
+    </div>
+
+    <div class="button-container">
+      <a
+        class="new-images"
+        href="#"
+        onclick="window.location.reload(); return false;"
+      >
+        <button type="button">New images</button>
+      </a>
+    </div>
+
+    <p class="author">Random image app by <b>Michael</b></p>
+  </body>
+</html>
